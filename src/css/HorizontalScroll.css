@@ -1,3 +1,49 @@
-bx {
-  border: 10px solid red;
+.container {
+  border: 1px solid red;
+
+}
+
+.box {
+  width: 400;
+  height: 200;
+  background-color: aqua;
+}
+
+.item[anim='fromLeft'] {
+  animation-name: Left;
+  animation-duration: 500ms;
+}
+
+.item[anim='fromRight'] {
+  animation-name: Right;
+  animation-duration: 500ms;
+}
+
+.controller {
+  width: 100vw;
+  display: flex;
+  border: 1px solid red;
+  justify-content: space-between;
+}
+
+@keyframes Left {
+  0% {
+    margin-left: 500px;
+    opacity: 0;
+  }
+  100% {
+    margin-left: 0px;
+    opacity: 100;
+  }
+}
+
+@keyframes Right {
+  0% {
+    margin-right: 500px;
+    opacity: 0;
+  }
+  100% {
+    margin-right: 0vw;
+    opacity: 100;
+  }
 }
