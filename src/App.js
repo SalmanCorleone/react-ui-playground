@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Slider from './components/slider/Slider';
+import Animated from './components/animated/Animated';
 
 const IMAGES = [
   'https://via.placeholder.com/550x350/DDDDDD/000000/?text=Slide%201',
@@ -15,7 +16,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Slider data={IMAGES} />
+        {/* <Slider data={IMAGES} /> */}
+        <Animated />
       </header>
     </div>
   );
