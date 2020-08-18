@@ -1,39 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import HorizontalScroll from './components/HorizontalScroll';
-import Axios from 'axios';
+import Slider from './components/slider/Slider';
+
+const IMAGES = [
+  'https://via.placeholder.com/550x350/DDDDDD/000000/?text=Slide%201',
+  'https://via.placeholder.com/550x350/DDDDDD/000000/?text=Slide%202',
+  'https://via.placeholder.com/550x350/DDDDDD/000000/?text=Slide%203',
+  'https://via.placeholder.com/350x550/DDDDDD/000000/?text=Slide%204',
+];
 
 function App() {
   const [data, setData] = useState();
 
-  useEffect(() => {
-    const getFakeData = async () => {
-      try {
-        let res = await Axios.get('https://jsonplaceholder.typicode.com/todos');
-        if (res.status) {
-          setData(res.data);
-        }
-        console.log(res);
-      } catch (e) {
-        console.log(e);
-      }
-    };
-    getFakeData();
-  }, []);
   return (
     <div className="App">
       <header className="App-header">
-        <HorizontalScroll {...{ data }} />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer">
-          Learn React
-        </a>
+        <Slider data={IMAGES} />
       </header>
     </div>
   );
